@@ -29,10 +29,10 @@ class BatchExecuter:
         self.replace_files = replace_files
 
     def run(self, additional_args=''):
-        subdirs = (self.include_subdirs+1)*'*'
-        files = [f for f in self.input_dir.glob(subdirs+"/*.[jp][pn]g")]
+        subdirs = '**/' if self.include_subdirs else ''
+        files = [f for f in self.input_dir.glob(subdirs + '*.[jp][pn]g')]
         for f in files:
-            print(f)
+            print('cwebp ' + additional_args + ' ' + str(f) + ' ' + self.app_output_parameter + ' ' + str(self.output_dir))
 
 
 if __name__ == '__main__':
@@ -49,7 +49,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     # todo: add json options handling
 
-    batch_executer = BatchExecuter(app_name='bin/cwebp.exe')
+    batch_executer = BatchExecuter(app_name='bin/cwebp.exe', include_subdirs=True)
     input_path = Path('.')
     input_path = input_path / Path('input')
     # print(list(input_path.glob('**/*.[jp][pn]g')))
