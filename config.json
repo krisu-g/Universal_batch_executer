@@ -1,0 +1,18 @@
+{
+  "input_dir": "input",
+  "include_subdirs": true,
+  "dir_mask": "*",
+  "file_masks": ["*.jpg", "*.jpeg", "*.png", "*.gif"],
+  "output_dir": "output_90_procent_jakosci",
+  "app_dir": "app",
+  "app_name": "bin/cwebp.exe",
+  "app_args": "-q 90",
+  "app_input_parameter": "",
+  "app_output_parameter": "-o",
+  "app_output_file_extension": ".webp",
+  "replace_files": true,
+  "replaced_files_backup": true,
+  "log_output_to": "stdout.log",
+  "error_log_output_to": "stderr.log",
+  "output_type": "append"
+}
