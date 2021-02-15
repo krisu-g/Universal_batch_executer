@@ -1,8 +1,11 @@
-"""Execute app from config.json options with its arguments on all specified files in given input directory,
-and put the result into the output directory maintaining its structure."""
+"""
+This module makes it possible to batch execute almost every program that runs from command line
+on files in input directory and outputs those into output directory (include directory structure).
+Settings are taken from config.json file. In the future there will be new features added.
+"""
 
 # Version of Module
-__version__ = '0.0.3a'
+__version__ = '0.0.4a'
 
 import argparse
 import datetime
@@ -38,11 +41,11 @@ class UniversalBatchExecuter:
         else:
             with open(config_file_name, 'r') as config_file:
                 data = json.load(config_file)
-                self.process_data(data)
-                if isinstance(data, dict):
-                    self.__dict__.update(data)
+                data_or_error_msg = self.process_data(data)
+                if isinstance(data_or_error_msg, dict):
+                    self.__dict__.update(data_or_error_msg)
                 else:
-                    raise ValueError(data)
+                    raise ValueError(data_or_error_msg)
 
     def process_data(self, data):
         error_msg = ''
@@ -110,12 +113,11 @@ class UniversalBatchExecuter:
 
     def run(self, additional_args=''):
         subdirs = '**/' if self.include_subdirs else ''
-        # todo: use option is_append or sth
         file_stdout = open(self.output_to, 'a+', encoding='utf8')
         file_stdout.write(80 * '=' + '\n')
         file_stdout.write((datetime.datetime.now()).strftime(
             '%d/%m/%Y %H:%M:%S') + '\n')
-        # todo: use option is_append or sth
+        # todo: use option is_append or sth to choose whether append or overwrite log files
         file_stderr = open(self.error_output_to, 'a+', encoding='utf8')
         file_stderr.write(80 * '=' + '\n')
         file_stderr.write((datetime.datetime.now()).strftime(
