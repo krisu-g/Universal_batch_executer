@@ -50,6 +50,6 @@ Then run it with optional additional parameters, e.g.:
 
 ## License
 
-© 2021 Krzysztof Grabowski
+&copy; 2021 Krzysztof Grabowski
 
-This repository is licensed under the MIT license. See LICENSE for details.
+This repository is licensed under the GPLv3 license. See LICENSE for details.

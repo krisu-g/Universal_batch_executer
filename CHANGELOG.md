@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file.
 
 - Error message shwowing when incorrect data in config.json
 - Some minor changes to the project structure.
+- Copyright sign in README.md
 
 ## [0.0.3] - 2021-02-15
 
