@@ -5,7 +5,7 @@ Settings are taken from config.json file. In the future there will be new featur
 """
 
 # Version of Module
-__version__ = '0.0.4a'
+__version__ = '0.0.4b'
 
 import argparse
 import datetime

@@ -33,7 +33,7 @@ CHANGELOG = (HERE / 'CHANGELOG.md').read_text()
 
 setup(
     name='batchexec',
-    version='0.0.4a',
+    version='0.0.4b',
     description='Batch execute any task, with simple json config',
     long_description=README + CHANGELOG,
     long_description_content_type='text/markdown',
