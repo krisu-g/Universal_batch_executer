@@ -13,6 +13,12 @@ All notable changes to this project will be documented in this file.
 
 - Add getters/setters to UniversalBatchExecuter class.
 
+## [0.0.5] - 2021-02-26
+
+### Fixed
+
+- making directories more than one level deep
+
 ## [0.0.4] - 2021-02-16
 
 ### Fixed

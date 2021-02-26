@@ -1,6 +1,6 @@
 # Batch execute any task, with simple json config
 
-This module makes it possible to batch execute almost every program that runs from command line on files in input directory and outputs those into output directory (include directory structure). Settings are taken from config.json file. In the future there will be new features added.
+This module makes it possible to batch execute almost every program that runs from command line on files in input directory and outputs those into output directory (including directory structure). Settings are taken from config.json file. In the future there will be new features added.
 
 ## Installation
 
@@ -8,7 +8,9 @@ This module makes it possible to batch execute almost every program that runs fr
 
 ## How to use it?
 
-Import module batchexec, use the class UniversalBatchExecuter from it with the config file (default: 'config.json'):
+Import module batchexec:
+```import batchexec```
+Use the class UniversalBatchExecuter with the config file as a parameter (default: 'config.json'):
 ```batch_executer = batchexec.UniversalBatchExecuter('config.json')```
 Then run it with optional additional parameters, e.g.:
 ```batch_executer.run('--verbose')```
